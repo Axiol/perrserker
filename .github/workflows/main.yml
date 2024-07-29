@@ -32,7 +32,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           {
-          gptscript ./.github/gptreview.gpt --PR_URL=${{ env.PR_URL }}
+          gptscript ./.github/gptreview.gpt --default-model gpt-4o-mini --PR_URL=${{ env.PR_URL }}
           echo EOF
           } >> "$GITHUB_ENV"
 
