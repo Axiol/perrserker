@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Get PR Details
         id: pr_details
@@ -32,7 +32,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           {
-          gptscript --default-model 'gpt-4o-mini' ./.github/gptreview.gpt --PR_URL=${{ env.PR_URL }}
+          gptscript ./.github/gptreview.gpt --PR_URL=${{ env.PR_URL }}
           echo EOF
           } >> "$GITHUB_ENV"
 
