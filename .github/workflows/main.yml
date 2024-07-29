@@ -32,7 +32,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           {
-          echo 'REVIEW&lt;<EOF'
+          echo 'REVIEW : '
           gptscript gptreview.gpt --PR_URL=${{ env.PR_URL }}
           echo EOF
           } >> "$GITHUB_ENV"
